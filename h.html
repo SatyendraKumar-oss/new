@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Divya 🌸</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffe6ee,#fff);
+    font-family:Arial, sans-serif;
+}
+
+
+.container{
+    width:90%;
+    max-width:600px;
+    text-align:center;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px #ffb6c1;
+}
+
+
+.main-title{
+    font-size:50px;
+    color:#ff4b6e;
+    font-weight:bold;
+}
+
+
+.message{
+    font-size:24px;
+    line-height:1.7;
+    padding:20px;
+}
+
+
+button{
+    background:#ff4b6e;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+
+button:hover{
+    background:#ff1744;
+}
+
+
+.hidden{
+    display:none;
+}
+
+
+.option{
+    display:block;
+    margin:15px;
+    font-size:20px;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- PAGE 1 -->
+
+<div id="page1">
+
+<h1 class="main-title">🌸 Hello Divya 🌸</h1>
+
+<div class="message">
+
+✨ Welcome to this little surprise.
+
+<br><br>
+
+🌷 Some special words are waiting for you.
+
+<br><br>
+
+💫 Click Next and continue the journey.
+
+</div>
+
+
+<button onclick="nextPage(2)">
+Next ➡️
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- PAGE 2 -->
+
+<div id="page2" class="hidden">
+
+
+<h1>✨ A Special Message</h1>
+
+
+<div class="message">
+
+
+🌟 Your positivity makes every day brighter.
+
+<br>
+
+🌸 Keep smiling because your smile spreads happiness.
+
+<br>
+
+🌈 Keep believing in yourself.
+
+<br>
+
+✨ You are capable of amazing things.
+
+
+</div>
+
+
+<button onclick="nextPage(3)">
+Next ➡️
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- PAGE 3 -->
+
+
+<div id="page3" class="hidden">
+
+
+<h1>🎮 Fun Question</h1>
+
+
+<h3>What do you like most?</h3>
+
+
+<label class="option">
+<input type="radio" name="choice" value="🌍 Traveling">
+🌍 Traveling
+</label>
+
+
+<label class="option">
+<input type="radio" name="choice" value="🎵 Music">
+🎵 Music
+</label>
+
+
+<label class="option">
+<input type="radio" name="choice" value="📚 Books">
+📚 Books
+</label>
+
+
+<label class="option">
+<input type="radio" name="choice" value="🌄 Nature">
+🌄 Nature
+</label>
+
+
+
+<button onclick="submitChoice()">
+Submit & Continue
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- PAGE 4 -->
+
+
+<div id="page4" class="hidden">
+
+
+<h1>🌟 Your Choice</h1>
+
+
+<h2 id="answer"></h2>
+
+
+<div class="message">
+
+
+🌷 Great choice!
+
+<br><br>
+
+✨ Life becomes beautiful when we enjoy what we love.
+
+<br><br>
+
+🌈 Keep exploring new experiences.
+
+<br><br>
+
+💫 Keep shining and growing every day.
+
+
+</div>
+
+
+
+<button onclick="nextPage(5)">
+Final Surprise ❤️
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- PAGE 5 -->
+
+
+<div id="page5" class="hidden">
+
+
+<h1 class="main-title">
+💌 Best Wishes Divya 💌
+</h1>
+
+
+<div class="message">
+
+
+🌸 May every day bring happiness to your life.
+
+<br><br>
+
+
+🌟 May your dreams become reality.
+
+<br><br>
+
+
+🌈 May success follow you wherever you go.
+
+<br><br>
+
+
+✨ Keep being the wonderful person you are.
+
+<br><br>
+
+
+💫 Never stop believing in yourself.
+
+<br><br>
+
+
+🌷 Thank you for visiting this little website.
+
+<br><br>
+
+
+😊 Have a fantastic day!
+
+
+</div>
+
+
+<h1>❄️ ✨ 🎈</h1>
+
+
+<button onclick="nextPage(1)">
+Start Again 🔄
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function nextPage(page){
+
+    document.querySelectorAll(
+    ".container > div"
+    ).forEach(div=>{
+        div.classList.add("hidden");
+    });
+
+
+    document.getElementById(
+        "page"+page
+    ).classList.remove("hidden");
+
+
+}
+
+
+
+
+function submitChoice(){
+
+
+let selected =
+document.querySelector(
+'input[name="choice"]:checked'
+);
+
+
+if(selected){
+
+document.getElementById("answer")
+.innerHTML =
+"You selected: " + selected.value;
+
+
+nextPage(4);
+
+
+}
+
+else{
+
+alert("Please select one option");
+
+}
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
